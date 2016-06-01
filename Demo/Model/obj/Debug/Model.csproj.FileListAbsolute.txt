@@ -1,0 +1,8 @@
+D:\0601work\Model\bin\Debug\Model.dll
+D:\0601work\Model\bin\Debug\Model.pdb
+D:\0601work\Model\obj\Debug\Model.dll
+D:\0601work\Model\obj\Debug\Model.pdb
+D:\0601workAPI_Test\Model\bin\Debug\Model.dll
+D:\0601workAPI_Test\Model\bin\Debug\Model.pdb
+D:\0601workAPI_Test\Model\obj\Debug\Model.dll
+D:\0601workAPI_Test\Model\obj\Debug\Model.pdb

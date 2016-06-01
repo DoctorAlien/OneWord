@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="_index.master.cs" Inherits="Admin_index" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="../Css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../Css/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../Css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../Css/AdminLTE.min.css" rel="stylesheet" type="text/css">
+    <link href="../Css/skin-blue.min.css" rel="stylesheet" type="text/css">
+    <link href="../Css/public.css" rel="stylesheet" type="text/css">
+    <script src="../Js/jquery-2.2.1.min.js"></script>
+    <script src="../Js/bootstrap.min.js"></script>
+    <script src="../Js/jquery.dataTables.min.js"></script>
+    <script src="../Js/dataTables.bootstrap.min.js"></script>
+    <script src="../Js/app.min.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<form id="form1" runat="server">
+    <div class="wrapper">
+    <!--顶部导航-->
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <span class="logo-mini"><b>一言</b></span>
+            <span class="logo-lg"><b>C#</b>一言</span>
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="../LogOut.aspx" ><i class="fa fa-power-off"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--左边导航-->
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="../Image/guest.png" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p><asp:Label ID="lblUserName" runat="server" Text=""></asp:Label></p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="header">导航</li>
+                <li class="">
+                    <a href="Dashboard.aspx">
+                        <i class="fa fa-dashboard"></i> <span>控制面板</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="WordsList.aspx">
+                        <i class="fa fa-commenting-o"></i> <span>一言</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="UsersList.aspx">
+                        <i class="fa fa-user"></i> <span>用户列表</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="MusicsList.aspx">
+                        <i class="fa fa-music"></i> <span>BGM列表</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="Setting.aspx">
+                        <i class="fa fa-cog"></i> <span>设置</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+    </aside>
+    <!--内容部分-->
+    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    <!--底部-->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 0.0.1
+        </div>
+        <strong>Copyright &copy; 2016 <a href="#">YepStudio</a>.</strong> All rights reserved.
+    </footer>
+    </div>  
+</form>     
+</body>
+</html>

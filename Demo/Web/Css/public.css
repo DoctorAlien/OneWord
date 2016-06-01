@@ -1,0 +1,78 @@
+*{margin:0;padding: 0}
+.margin-0{margin:0 !important}
+a:hover{text-decoration: none;cursor: pointer}
+blockquote{background-color: #eeeeee;border-left: 5px solid #8c8c8c; }
+.fixed-music{bottom:8px;left:8px;position:fixed}
+.fixed-top{bottom:8px;right:8px;position:fixed;cursor:pointer;}
+.text-red{color:Red}
+/*UserCenter*/
+.header-banner img{width:150px;height:150px;border-radius:50%;margin-top:100px;margin-bottom:20px;}
+.banner-text{font-size:22px;color:#ccc;margin-bottom:50px;}
+.uc-navbar ul li{list-style:none;float:left}
+.uc-navbar,.uc-center-tab{height:40px;}
+.uc-navbar{background-color:#071a37;margin:0 auto;padding:0 25%;}
+.uc-navbar a{color:#b0bdd0;}
+.uc-navbar li:hover {border-bottom:3px solid rgb(247,105,29);font-weight:bolder}
+.uc-center-tab{width:33.333333%;color:#b0bdd0;line-height:40px;}
+.uc-tab-active{border-bottom:3px solid rgb(247,105,29);font-weight:bolder}
+.ow-panel{width:100%;padding-left:31%;margin-top:15px;color:#b0bdd0;}
+.user-oneword{padding:15px 20px;margin-bottom: 15px;width:100%;border:solid 1px #071a37;color:#b0bdd0;background-color:#071a37}
+.ow-info{margin-left: 70px;padding-top: 8px;height: 60px;}
+.user-oneword-body{margin-top:15px;color:#8c8c8c}
+.user-oneword-foot{height:18px;}
+.uc-aside{width:100%;background-color:#071a37;height:65px;margin-top:15px;color:#b0bdd0;padding-top:10px;}
+.uc-aside input:-moz-placeholder { color: #38547b; }
+.uc-aside input::-webkit-input-placeholder { color:#38547b; }
+.search-oneword{border:none;font-size:17.5px;margin:15px 10%;width:80%;padding:5px 10px;background-color:#0c2343;color:#38547b}
+.user-oneword-error{font-size:17.5px;}
+/*Login&Register*/
+.login-form{width: 350px;margin: 150px auto 0 auto;}
+.login-header,.login-register{text-align: center;}
+.login-logo{color:rgb(15,136,235);font-size: 3em;font-family: "Microsoft YaHei", "微软雅黑"}
+.login-title{margin:10px;}
+.login-register{font-size:18px}
+.login-register a{color:#8c8c8c;}
+.login-register a:hover{color: #777777;text-decoration: none;}
+.login-active{border-bottom: 3px solid skyblue;color:skyblue !important;}
+.login-form input{border:solid 1px #cccccc;padding:10px;box-shadow: none;width: 100%}
+.txt-validate-code{width:75% !important}
+.validate-code{border:solid 1px #cccccc;width:25%;padding:10px;float:right;position:relative}
+.login-form input:focus{border:solid 1px #cccccc;box-shadow: none;outline:transparent;box-sizing: border-box;}
+.register-main,.login-main{border: solid 1px #cccccc;border-radius: 5px;margin: 15px 40px 0 40px;}
+.register-btn,.login-btn{margin: 15px 40px 0 40px;}
+.login-footer{margin: 15px 40px 0 40px;color: #8c8c8c}
+/*OneWord Index*/
+.edit-panel,.random-oneword{border: solid 1px #cccccc;}
+.edit-panel,.random-oneword,.oneword-feed-aside,.navbar-skyblue{box-shadow: 3px 3px 3px #ccc}
+.navbar-lightskyblue{background-color: lightskyblue;border-radius: 0;}
+.oneword-feed{width: 970px;margin: 0 auto;}
+.oneword-feed-context,.oneword-feed-aside{margin-right: 10px;}
+.oneword-feed-context{width: 640px;position: absolute}
+.oneword-feed-aside{width:300px;float: right;position: relative;height: 225px;background: linear-gradient(#ffffff 50%,lightskyblue 50%);color: #444444}
+.oneword-feed-aside a{color:#444444}
+.oneword-aside-text,.oneword-aside-icon{width: 50%;display: block;float:left;text-align: center}
+.oneword-aside-text{font-size: 22px; margin-bottom: -8px;s}
+.oneword-aside-icon{font-size: 16px;margin-top: 6px;}
+.edit-panel{padding: 15px 10px;margin-bottom: 15px;}
+.edit-panel-head{color: #444444;font-size: 20px;}
+.edit-panel-body,.edit-panel-head{margin-bottom: 15px;}
+.edit-panel-foot{color:#ccc;}
+.textarea-reset{width:100%;height: 100px;resize: none;border-radius: 0;}
+.random-oneword{padding: 15px 10px;margin-bottom: 15px;}
+.random-pic{float: left}
+.random-info{float: left;margin-left: 10px;padding-top: 8px;height: 60px;}
+.random-oneword-body{margin-top:75px;}
+.random-oneword-foot{height: 18px;}
+.random-oneword-like{float: right;}
+
+.fa-size-1{font-size: 18px;}
+.fa-margin-1{margin-left: 10px;}
+
+.refresh-bottom{width: 640px;position: absolute;border-radius:0;margin-bottom:20px;}
+/*Admin*/
+.user-content-header{position: relative;padding: 15px 10px 0px 20px;height: 65px;background: #fbfbfb;box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);}
+
+@media (max-width: 640px) {
+    .edit-panel,.random-oneword{width: 620px;margin-right:  auto;margin-left: auto}
+    .oneword-feed-aside{display: none}
+}
