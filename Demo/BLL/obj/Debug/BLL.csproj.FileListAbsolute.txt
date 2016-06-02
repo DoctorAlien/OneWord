@@ -16,3 +16,12 @@ D:\0601workAPI_Test\BLL\bin\Debug\Model.pdb
 D:\0601workAPI_Test\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\0601workAPI_Test\BLL\obj\Debug\BLL.dll
 D:\0601workAPI_Test\BLL\obj\Debug\BLL.pdb
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\BLL\bin\Debug\BLL.dll
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\BLL\bin\Debug\BLL.pdb
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\BLL\bin\Debug\DAL.dll
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\BLL\bin\Debug\Model.dll
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\BLL\bin\Debug\DAL.pdb
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\BLL\bin\Debug\Model.pdb
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\BLL\obj\Debug\BLL.dll
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\BLL\obj\Debug\BLL.pdb

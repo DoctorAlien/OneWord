@@ -6,3 +6,7 @@ D:\0601workAPI_Test\Model\bin\Debug\Model.dll
 D:\0601workAPI_Test\Model\bin\Debug\Model.pdb
 D:\0601workAPI_Test\Model\obj\Debug\Model.dll
 D:\0601workAPI_Test\Model\obj\Debug\Model.pdb
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\Model\bin\Debug\Model.dll
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\Model\bin\Debug\Model.pdb
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\Model\obj\Debug\Model.dll
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\Model\obj\Debug\Model.pdb

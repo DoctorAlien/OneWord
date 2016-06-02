@@ -12,3 +12,10 @@ D:\0601workAPI_Test\DAL\bin\Debug\Model.pdb
 D:\0601workAPI_Test\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\0601workAPI_Test\DAL\obj\Debug\DAL.dll
 D:\0601workAPI_Test\DAL\obj\Debug\DAL.pdb
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\DAL\bin\Debug\DAL.dll
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\DAL\bin\Debug\DAL.pdb
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\DAL\bin\Debug\Model.dll
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\DAL\bin\Debug\Model.pdb
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\DAL\obj\Debug\DAL.dll
+C:\Users\lenovo\Dropbox\github\OneWord\Demo\DAL\obj\Debug\DAL.pdb

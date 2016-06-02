@@ -17,13 +17,20 @@ public partial class _Default : System.Web.UI.Page
             Random_Validate_Load();
         }
     }
-
+    /// <summary>
+    /// 获取随机数
+    /// </summary>
     private void Random_Validate_Load()
     {
         Random ran = new Random();
         lbtnValidateCode_login.Text = ran.Next(10000, 99999).ToString();
         lbtnValidateCode_register.Text = ran.Next(10000, 99999).ToString();
     }
+    /// <summary>
+    /// 注册
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btnRegister_Click(object sender, EventArgs e)
     {
         if (Page.IsValid)
@@ -43,6 +50,11 @@ public partial class _Default : System.Web.UI.Page
         }
         
     }
+    /// <summary>
+    /// 登陆
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btnLogin_Click(object sender, EventArgs e)
     {
         if (Page.IsValid)
@@ -87,6 +99,7 @@ public partial class _Default : System.Web.UI.Page
 
         return ipAddr;
     }
+    #region 验证码刷新
     protected void lbtnValidateCode_register_Click(object sender, EventArgs e)
     {
         Response.Redirect("Default.aspx#register");
@@ -95,7 +108,9 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("Default.aspx#login");
     }
+    #endregion   
     #region 验证控件
+    #region 注册验证
     protected void cvUserName_register_ServerValidate(object source, ServerValidateEventArgs args)
     {
         string username = txtUserName_register.Text.Trim();
@@ -187,13 +202,21 @@ public partial class _Default : System.Web.UI.Page
             args.IsValid = true;
         }
     }
+    #endregion
+    #region 登陆验证
     protected void cvUserName_login_ServerValidate(object source, ServerValidateEventArgs args)
     {
         string username = txtUserName_login.Text.Trim();
         args.IsValid = false;
-        if (username=="")
+        if (username == "")
         {
             cvUserName_login.ErrorMessage = "*用户名不能为空";
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "", "var stateObject = {};history.pushState(stateObject,'登陆','#login');", true);
+        }
+        else if (!BLL.LoginBLL.IsExist(username, BLL.CommonBLL.GetMD5(txtPassword_login.Text)))
+        {
+            cvUserName_login.ErrorMessage = "*用户名或密码错误";
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "", "var stateObject = {};history.pushState(stateObject,'登陆','#login');", true);
         }
         else
         {
@@ -204,9 +227,10 @@ public partial class _Default : System.Web.UI.Page
     {
         string password = txtPassword_login.Text.Trim();
         args.IsValid = false;
-        if (password=="")
+        if (password == "")
         {
             cvPassword_login.ErrorMessage = "*密码不能为空";
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "", "var stateObject = {};history.pushState(stateObject,'登陆','#login');", true);
         }
         else
         {
@@ -218,19 +242,22 @@ public partial class _Default : System.Web.UI.Page
         string text_validate = txtValidateCode_login.Text.Trim();
         string lbtn_validate = lbtnValidateCode_login.Text.Trim();
         args.IsValid = false;
-        if (text_validate=="")
+        if (text_validate == "")
         {
             cvValidate_Login.ErrorMessage = "*验证码不能为空";
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "", "var stateObject = {};history.pushState(stateObject,'登陆','#login');", true);
         }
         else if (text_validate != lbtn_validate)
         {
             cvValidate_Login.ErrorMessage = "*验证码不正确";
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "", "var stateObject = {};history.pushState(stateObject,'登陆','#login');", true);
         }
         else
         {
             args.IsValid = true;
         }
     }
+    #endregion
     #endregion
     
 }
