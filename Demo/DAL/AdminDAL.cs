@@ -44,6 +44,22 @@ namespace DAL
             }
         }
         /// <summary>
+        /// 获取BGM数量
+        /// </summary>
+        /// <returns></returns>
+        public SqlDataReader GetBGMNumReader() {
+            try
+            {
+                string sqlString = "select count(*) as count_bgm from t_musics_base";
+                return sql.GetDataReader(sqlString);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        /// <summary>
         /// 获取用户列表
         /// </summary>
         /// <returns></returns>
@@ -330,6 +346,32 @@ namespace DAL
             {
                 return false;
             }
+        }
+        /// <summary>
+        /// 获取年份值
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetChartYear() {
+            string sqlString = "select DATENAME(YEAR,create_time) as year_ from t_users_base group by DATENAME(YEAR,create_time)";
+            return sql.GetDataSet(sqlString);
+        }
+        /// <summary>
+        /// 获取Chart图表 用户统计 
+        /// </summary>
+        /// <param name="month"></param>
+        /// <returns></returns>
+        public DataSet GetChartUsers(int month) {
+            string sqlString = "select count(*) as sum_people,DATENAME(YEAR,create_time) as year_,DATENAME(MONTH,create_time) as month_ from t_users_base where DATENAME(YEAR,create_time)='"+month+"' group by DATENAME(YEAR,create_time),DATENAME(MONTH,create_time)";
+            return sql.GetDataSet(sqlString);
+        }
+        /// <summary>
+        /// 获取Chart图表 一言统计
+        /// </summary>
+        /// <param name="month"></param>
+        /// <returns></returns>
+        public DataSet GetChartWords(int month) {
+            string sqlString = "select count(*) as sum_word,DATENAME(YEAR,create_time) as year_,DATENAME(MONTH,create_time) as month_ from t_words_base where DATENAME(YEAR,create_time)='" + month + "' group by DATENAME(YEAR,create_time),DATENAME(MONTH,create_time)";
+            return sql.GetDataSet(sqlString);
         }
     }
 }

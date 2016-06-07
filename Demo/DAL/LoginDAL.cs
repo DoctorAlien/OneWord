@@ -19,7 +19,7 @@ namespace DAL
         public bool IsExist(M.UsersModel user) {
             try
             {
-                string sqlString = "select * from t_users_base where username_=@username and password_=@password;";
+                string sqlString = "select * from t_users_base where username_=@username and password_=@password and status_=1;";
                 SqlParameter[] values = new SqlParameter[]{
                 new SqlParameter("@username",user.Username),
                 new SqlParameter("@password",user.Password)
@@ -61,7 +61,7 @@ namespace DAL
         public bool IsAdmin(M.UsersModel user) {
             try
             {
-                string sqlString = "select * from t_users_admin as ua,t_users_base as ub where ua.uuid=ub.uuid and ub.username_=@username";
+                string sqlString = "select * from t_users_admin as ua,t_users_base as ub where ua.uuid=ub.uuid and ub.username_=@username and ua.status_=1";
                 SqlParameter[] values = new SqlParameter[]{
                 new SqlParameter("@username",user.Username)
                 };

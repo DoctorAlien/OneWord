@@ -28,6 +28,14 @@ namespace BLL
             return dal.GetWordsNumReader();
         }
         /// <summary>
+        /// 获取BGM数量
+        /// </summary>
+        /// <returns></returns>
+        public static SqlDataReader GetBGMNumReader(){
+            D.AdminDAL dal = new D.AdminDAL();
+            return dal.GetBGMNumReader();
+        }
+        /// <summary>
         /// 获取用户列表
         /// </summary>
         /// <returns></returns>
@@ -179,6 +187,14 @@ namespace BLL
             D.AdminDAL dal = new D.AdminDAL();
             return dal.DeleteMusic(music);
         }
+        /// <summary>
+        /// 插入BGM
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="author"></param>
+        /// <param name="url"></param>
+        /// <param name="picture"></param>
+        /// <returns></returns>
         public static bool InsertBGM(string title, string author, string url, string picture) {
             M.MusicsModel music = new M.MusicsModel();
             music.Author = author;
@@ -187,6 +203,32 @@ namespace BLL
             music.Picture = picture;
             D.AdminDAL dal = new D.AdminDAL();
             return dal.InsertBGM(music);
+        }
+        /// <summary>
+        /// 获取年份值
+        /// </summary>
+        /// <returns></returns>
+        public static DataSet GetChartYear() {
+            D.AdminDAL dal = new D.AdminDAL();
+            return dal.GetChartYear();
+        }
+        /// <summary>
+        /// 获取Chart图表 用户统计
+        /// </summary>
+        /// <param name="month"></param>
+        /// <returns></returns>
+        public static DataSet GetChartUsers(int month){
+            D.AdminDAL dal = new D.AdminDAL();
+            return dal.GetChartUsers(month);
+        }
+        /// <summary>
+        /// 获取Chart图表 一言统计
+        /// </summary>
+        /// <param name="month"></param>
+        /// <returns></returns>
+        public static DataSet GetChartWords(int month) {
+            D.AdminDAL dal = new D.AdminDAL();
+            return dal.GetChartWords(month);
         }
     }
 }

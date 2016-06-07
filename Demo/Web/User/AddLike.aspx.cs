@@ -20,10 +20,18 @@ public partial class User_AddLike : System.Web.UI.Page
             {
                 Response.Redirect("User.aspx");
             }
+            else
+            {
+                Response.Redirect("User.aspx");
+            }
         } 
         else
         {
             if (BLL.UserBLL.InsertStatus(wbid,1))
+            {
+                Response.Redirect("User.aspx");
+            }
+            else
             {
                 Response.Redirect("User.aspx");
             }

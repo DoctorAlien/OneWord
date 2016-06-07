@@ -78,6 +78,11 @@
                     </a>
                 </li>
                 <li class="">
+                    <a href="Chart.aspx">
+                        <i class="fa fa-area-chart"></i> <span>报表</span>
+                    </a>
+                </li>
+                <li class="">
                     <a href="Setting.aspx">
                         <i class="fa fa-cog"></i> <span>设置</span>
                     </a>

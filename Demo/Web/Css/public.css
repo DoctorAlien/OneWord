@@ -33,10 +33,10 @@ blockquote{background-color: #eeeeee;border-left: 5px solid #8c8c8c; }
 .login-register{font-size:18px}
 .login-register a{color:#8c8c8c;}
 .login-register a:hover{color: #777777;text-decoration: none;}
-.login-active{border-bottom: 3px solid skyblue;color:skyblue !important;}
+.login-active{border-bottom: 3px solid rgb(15, 136, 235);color:rgb(15, 136, 235) !important;}
 .login-form input{border:solid 1px #cccccc;padding:10px;box-shadow: none;width: 100%}
 .txt-validate-code{width:75% !important}
-.validate-code{border:solid 1px #cccccc;width:25%;padding:10px;float:right;position:relative}
+.validate-code{border:solid 1px #cccccc;width:25%;padding:10px;float:right;position:relative;background-color: white;}
 .login-form input:focus{border:solid 1px #cccccc;box-shadow: none;outline:transparent;box-sizing: border-box;}
 .register-main,.login-main{border: solid 1px #cccccc;border-radius: 5px;margin: 15px 40px 0 40px;}
 .register-btn,.login-btn{margin: 15px 40px 0 40px;}
@@ -71,6 +71,7 @@ blockquote{background-color: #eeeeee;border-left: 5px solid #8c8c8c; }
 .refresh-bottom{width: 640px;position: absolute;border-radius:0;margin-bottom:20px;}
 /*Admin*/
 .user-content-header{position: relative;padding: 15px 10px 0px 20px;height: 65px;background: #fbfbfb;box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);}
+
 
 @media (max-width: 640px) {
     .edit-panel,.random-oneword{width: 620px;margin-right:  auto;margin-left: auto}

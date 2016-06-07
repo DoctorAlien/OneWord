@@ -13,9 +13,13 @@ public partial class Admin_index : System.Web.UI.MasterPage
         {
             Response.Redirect("../Default.aspx");
         }
-        else
+        else if (Session["admin"]!=null&&Session["admin"]=="true")
         {
             lblUserName.Text = Session["username"].ToString();
+        }
+        else
+        {
+            Response.Redirect("../Default.aspx");
         }
     }
 }

@@ -74,10 +74,12 @@ public partial class _Default : System.Web.UI.Page
                 Session["username"] = username;
                 if (BLL.LoginBLL.IsAdmin(username))
                 {
+                    Session["admin"] = "true";
                     Response.Redirect("Admin/Dashboard.aspx");
                 }
                 else
                 {
+                    Session["admin"] = "false";
                     Response.Redirect("User/User.aspx");
                 }
             }

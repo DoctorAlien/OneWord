@@ -12,6 +12,7 @@ public partial class Admin_Dashboard : System.Web.UI.Page
     {
         SqlDataReader sdrUsersNum = BLL.AdminBLL.GetUsersNumReader();
         SqlDataReader sdrWordsNum = BLL.AdminBLL.GetWordsNumReader();
+        SqlDataReader sdrBGMNum = BLL.AdminBLL.GetBGMNumReader();
         if (sdrUsersNum.HasRows)
         {
             while (sdrUsersNum.Read())
@@ -26,5 +27,12 @@ public partial class Admin_Dashboard : System.Web.UI.Page
                 lblOneWord.Text = sdrWordsNum["count_wbid"].ToString();
             }
         } sdrWordsNum.Close();
+        if (sdrBGMNum.HasRows)
+        {
+            while (sdrBGMNum.Read())
+            {
+                lblBGMNumber.Text = sdrBGMNum["count_bgm"].ToString();
+            }
+        } sdrBGMNum.Close();
     }
 }

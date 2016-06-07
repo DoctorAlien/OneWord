@@ -8,12 +8,20 @@
     <link rel="stylesheet" type="text/css" href="Css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="Css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="Css/public.css">
+    <link rel="stylesheet" type="text/css" href="Css/clouds.css">
     <script src="Js/jquery-2.2.1.min.js"></script>
     <script src="Js/bootstrap.min.js"></script>
+    <script src="Js/clouds.js"></script>
+    <script src="Js/app.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="login-form">
+
+    <div id="far-clouds" class="stage far-clouds"></div>
+    <div id="near-clouds" class="stage near-clouds"></div>
+
+    <div class="content">
+        <div class="login-form">
         <div class="login-header">
             <div class="login-logo">一言</div>
             <div class="login-title">留下你所喜欢的那一句句话，与大家分享</div>
@@ -91,6 +99,9 @@
             © 2016&nbsp;&nbsp;一言@C#&nbsp;PoweredBy&nbsp;DoctorAlien
         </div>
     </div>
+    </div>
+
+    
     <script>
         function registerClick() {
             $('#btn-register-top').addClass('login-active');

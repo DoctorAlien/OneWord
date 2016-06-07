@@ -41,6 +41,19 @@
                         <a href="UsersList.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+
+                <div class="col-lg-3 col-xs-6">
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3><asp:Label ID="lblBGMNumber" runat="server" Text="Label"></asp:Label></h3>
+                            <p>BGM</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-music"></i>
+                        </div>
+                        <a href="MusicsList.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
