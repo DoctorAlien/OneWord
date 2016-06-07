@@ -15,7 +15,25 @@ public partial class _Default : System.Web.UI.Page
         if (!Page.IsPostBack)
         {
             Random_Validate_Load();
+            repRandomWord_Page_Load();
         }
+    }
+    /// <summary>
+    /// 获取首页底部随机OneWord
+    /// </summary>
+    private void repRandomWord_Page_Load()
+    {
+        repRandomWord.DataSource = BLL.API.GetRandomWord().Tables[0].DefaultView;
+        repRandomWord.DataBind();
+    }
+    /// <summary>
+    /// 首页底部随机刷新按钮
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void lbtnRefresh_Click(object sender, EventArgs e)
+    {
+        repRandomWord_Page_Load();
     }
     /// <summary>
     /// 获取随机数

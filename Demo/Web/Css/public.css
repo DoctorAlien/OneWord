@@ -41,9 +41,10 @@ blockquote{background-color: #eeeeee;border-left: 5px solid #8c8c8c; }
 .register-main,.login-main{border: solid 1px #cccccc;border-radius: 5px;margin: 15px 40px 0 40px;}
 .register-btn,.login-btn{margin: 15px 40px 0 40px;}
 .login-footer{margin: 15px 40px 0 40px;color: #8c8c8c}
+.ow-bottom-random{background-color:#e5ffff;border-top:#cccccc 1px solid;padding:8px 18px;color:#8c8c8c;font-weight:bolder}
 /*OneWord Index*/
 .edit-panel,.random-oneword{border: solid 1px #cccccc;}
-.edit-panel,.random-oneword,.oneword-feed-aside,.navbar-skyblue{box-shadow: 3px 3px 3px #ccc}
+.edit-panel,.random-oneword,.oneword-feed-aside,.navbar-skyblue,.navbar-lightskyblue{box-shadow: 3px 3px 3px #ccc}
 .navbar-lightskyblue{background-color: lightskyblue;border-radius: 0;}
 .oneword-feed{width: 970px;margin: 0 auto;}
 .oneword-feed-context,.oneword-feed-aside{margin-right: 10px;}
@@ -51,7 +52,7 @@ blockquote{background-color: #eeeeee;border-left: 5px solid #8c8c8c; }
 .oneword-feed-aside{width:300px;float: right;position: relative;height: 225px;background: linear-gradient(#ffffff 50%,lightskyblue 50%);color: #444444}
 .oneword-feed-aside a{color:#444444}
 .oneword-aside-text,.oneword-aside-icon{width: 50%;display: block;float:left;text-align: center}
-.oneword-aside-text{font-size: 22px; margin-bottom: -8px;s}
+.oneword-aside-text{font-size: 22px; margin-bottom: -8px;}
 .oneword-aside-icon{font-size: 16px;margin-top: 6px;}
 .edit-panel{padding: 15px 10px;margin-bottom: 15px;}
 .edit-panel-head{color: #444444;font-size: 20px;}

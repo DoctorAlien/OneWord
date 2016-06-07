@@ -20,7 +20,7 @@
     <div id="far-clouds" class="stage far-clouds"></div>
     <div id="near-clouds" class="stage near-clouds"></div>
 
-    <div class="content">
+    <div class="content" style="height:100%">
         <div class="login-form">
         <div class="login-header">
             <div class="login-logo">一言</div>
@@ -101,7 +101,22 @@
     </div>
     </div>
 
-    
+    <div class="navbar-fixed-bottom ow-bottom-random">
+        <asp:Repeater ID="repRandomWord" runat="server">
+        <ItemTemplate>
+            <span><%#Eval("word_") %></span>
+            <span style="margin-left:15px;"><%#Eval("create_time") %></span>
+        </ItemTemplate>
+        <FooterTemplate>
+            <div class="pull-right">
+                <asp:LinkButton ID="lbtnRefresh" runat="server" onclick="lbtnRefresh_Click">
+                    <i class="fa fa-refresh fa-spin"></i>
+                    Refresh
+                </asp:LinkButton>
+            </div>
+        </FooterTemplate>
+        </asp:Repeater>
+    </div>
     <script>
         function registerClick() {
             $('#btn-register-top').addClass('login-active');

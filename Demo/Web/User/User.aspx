@@ -18,7 +18,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="navbar navbar-lightskyblue">
+    <div class="navbar navbar-lightskyblue navbar-fixed-top">
     <div class="container">
         <div class="navbar-header pull-left">
             <a href="User.aspx" class="navbar-brand">一言</a>
@@ -28,7 +28,7 @@
         </div>
     </div>
 </div>
-<div class="oneword-feed">
+<div class="oneword-feed" style="margin-top:70px;">
     <div class="oneword-feed-context">
         <div class="edit-panel">
             <div class="edit-panel-head">
