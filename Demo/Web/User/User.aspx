@@ -1,34 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="User.aspx.cs" Inherits="User_User" debug="true"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/_index.master" AutoEventWireup="true" CodeFile="User.aspx.cs" Inherits="User_UserTest" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../Css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../Css/public.css">
-    <link rel="stylesheet" type="text/css" href="../Css/OwO.min.css">
-    <link rel="Stylesheet" type="text/css" href="../Css/APlayer.min.css" />
-    <script type="text/javascript" src="../Js/jquery-2.2.1.min.js"></script>
-    <script type="text/javascript" src="../Js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../Js/OwO.min.js"></script>
-    <script type="text/javascript" src="../Js/remaining-num.js"></script>
-    <script type="text/javascript" src="../Js/APlayer.min.js"></script>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div class="navbar navbar-lightskyblue navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header pull-left">
-            <a href="User.aspx" class="navbar-brand">一言</a>
-        </div>
-        <div class="navbar-brand pull-right">
-            <a href="../LogOut.aspx">退出</a>
-        </div>
-    </div>
-</div>
-<div class="oneword-feed" style="margin-top:70px;">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div class="oneword-feed" style="margin-top:70px;">
     <div class="oneword-feed-context">
         <div class="edit-panel">
             <div class="edit-panel-head">
@@ -58,7 +33,7 @@
                     <img src="../Image/guest.png" class="img-circle" style="width: 60px;height: 60px;">
                 </div>
                 <div class="random-info">
-                    <div><strong><%#Eval("username_") %></strong></div>
+                    <div><strong><a href="OperateAttention.aspx?uuidto=<%#Eval("uuid") %>"><%#Eval("username_") %></a></strong></div>
                     <div><%#Eval("create_time") %></div>
                 </div>
             </div>
@@ -66,11 +41,16 @@
                 <blockquote><%#Eval("word_") %></blockquote>
             </div>
             <div class="random-oneword-foot">
-                <div class="random-oneword-like">
+                <div class="pull-right">
                     <a href="AddLike.aspx?wbid=<%#Eval("wbid") %>"><i class="fa fa-size-1 fa-margin-1 fa-thumbs-o-up"></i>
                     <span style="font-size: 16px;"> <%#Eval("number_").ToString() != "" ? Eval("number_") : "0"%></span>
                     </a>
                 </div>
+                <%--<div class="pull-right">
+                    <a href=""><i class="fa fa-size-1 fa-margin-1 fa-flag"></i>
+                    <span style="font-size: 16px;"> 关注此人</span>
+                    </a>
+                </div>--%>
             </div>
         </div>
         </ItemTemplate>
@@ -80,25 +60,10 @@
             CssClass="refresh-bottom btn btn-block btn-lg btn-info" 
             onclick="lbtnRefresh_bottom_Click">随机获取五条OneWord</asp:LinkButton>
     </div>
-    <asp:Repeater ID="repAside" runat="server">
-    <ItemTemplate>
-        <div class="oneword-feed-aside">
-        <center style="margin-top: 40px;">
-            <img class="img-circle" src="../Image/guest.png" style="width: 100px;height: 100px;">
-            <div style="color: #4a4744;font-size: 22px;"><strong><a href="UserCenter.aspx"><%#Eval("username_") %></a></strong></div>
-        </center>
-        <div>
-            <div class="oneword-aside-text"><strong><a href="UserCenter.aspx"><%#Eval("count_words_a1") %></a></strong></div>
-            <div class="oneword-aside-text"><strong><%#Eval("sum_number_a1").ToString()!=""? Eval("sum_number_a1"):"0"%></strong></div>
-            <span class="oneword-aside-icon"><i class="fa fa-size-1 fa-commenting-o"></i></span>
-            <span class="oneword-aside-icon"><i class="fa fa-size-1 fa-thumbs-o-up"></i></span>
-        </div>
-    </div>
-    </ItemTemplate>
-    </asp:Repeater>
+    <div class="pull-right">
     <asp:Panel ID="pnlAsideNull" runat="server" Visible="False">
         <div class="oneword-feed-aside">
-        <center style="margin-top: 40px;">
+        <center style="padding-top:40px;">
             <img class="img-circle" src="../Image/guest.png" style="width: 100px;height: 100px;">
             <div style="color: #4a4744;font-size: 22px;"><strong><a href="UserCenter.aspx">
                 <asp:Label ID="lblUserName" runat="server"></asp:Label></a></strong></div>
@@ -111,13 +76,62 @@
         </div>
     </div>
     </asp:Panel>
-</div>
+    <asp:Repeater ID="repAside" runat="server">
+    <ItemTemplate>
+        <div class="oneword-feed-aside">
+        <center style="padding-top:40px;">
+            <img class="img-circle" src="../Image/guest.png" style="width: 100px;height: 100px;">
+            <div style="color: #4a4744;font-size: 22px;"><strong><a href="UserCenter.aspx"><%#Eval("username_") %></a></strong></div>
+        </center>
+        <div>
+            <div class="oneword-aside-text"><strong><a href="UserCenter.aspx"><%#Eval("count_words_a1") %></a></strong></div>
+            <div class="oneword-aside-text"><strong><%#Eval("sum_number_a1").ToString()!=""? Eval("sum_number_a1"):"0"%></strong></div>
+            <span class="oneword-aside-icon"><i class="fa fa-size-1 fa-commenting-o"></i></span>
+            <span class="oneword-aside-icon"><i class="fa fa-size-1 fa-thumbs-o-up"></i></span>
+        </div>
+    </div>
+    </ItemTemplate>
+    </asp:Repeater>
 
-<div id="side-music" class="fixed-music aplayer"></div>
-<div id="side-top" class="fixed-top" style="display:none;">
-    <img src="../Image/top_icon.png" width="50px" height="50px"/>
-</div>
+    <div class="oneword-recommend-aside">
+        <div style="padding-left:10px;">
+            <h4>今日推荐</h4>
+        </div>
+        <asp:Repeater ID="repAttentionRandom" runat="server">
+        <ItemTemplate>
+            <div class="aside-recommend-body">
+            <div class="pull-left">
+                <img src="../Image/guest.png" class="img-circle" style="width: 50px;height: 50px;">
+            </div>
+            <div class="pull-left" style="margin-left:10px;margin-top:5px;">
+                <strong><%#Eval("username_") %></strong>
+                <div>注册于<%#Eval("create_time", "{0:yyyy-mm-dd}")%></div>
+            </div>
+            <div class="pull-right" style="margin-top:15px;">
+                <a>
+                    <i class="fa fa-plus"></i>
+                    <a href="OperateAttention.aspx?uuidto=<%#Eval("uuid") %>">关注</a>
+                </a>
+            </div>
+        </div>
+        </ItemTemplate>
+            
+        </asp:Repeater>
+        
+        
+        <div class="text-center">
+            <h5>
+                <a>
+                    <asp:LinkButton ID="lbtnAttentionRandomChange" runat="server" onclick="lbtnAttentionRandomChange_Click">换一批</asp:LinkButton>
+                    <i class="fa fa-hand-o-right"></i>
+                </a>
+            </h5>
+        </div>
+    </div>
+    </div>
 
+    
+</div>
 <script type="text/javascript">
     var OwO_demo = new OwO({
         logo: '<i class="fa fa-size-1 fa-smile-o">&nbsp;表情</i>',
@@ -128,41 +142,6 @@
         width: '618px;',
         maxHeight: '250px'
     });
-    $("#side-top").click(function () {
-        $(document.body).animate({ 'scrollTop': 0 }, 888);
-        $("#side-top").css("display", "none");
-    });
-    window.onload = function () {
-        window.onscroll = function () {
-            $('#side-music').addClass('fixed-music');
-            $('#side-top').css('display', 'block');
-            if ($(document).scrollTop() == 0) {
-                $("#side-top").css("display", "none");
-            }
-        }
-    };
 </script>
-    </form>
-    <asp:Repeater ID="repMusic" runat="server">
-    <ItemTemplate>
-        <script type="text/javascript">
-            var music = new APlayer({
-                element: document.getElementById('side-music'),
-                narrow: true,
-                autoplay: false,
-                showlrc: false,
-                mutex: true,
-                theme: '#e6d0b2',
-                music: {
-                    title: '<%#Eval("title_") %>',
-                    author: '<%#Eval("author_") %>',
-                    url: '<%#Eval("url_") %>',
-                    pic: '<%#Eval("picture_") %>'
-                }
-            });
-            music.init();
-        </script>
-    </ItemTemplate>
-    </asp:Repeater>
-</body>
-</html>
+</asp:Content>
+

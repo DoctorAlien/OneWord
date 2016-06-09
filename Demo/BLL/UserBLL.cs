@@ -132,5 +132,86 @@ namespace BLL
             D.UserDAL dal = new D.UserDAL();
             return dal.GetSearchSet(word);
         }
+        /// <summary>
+        /// 是否已经关注过
+        /// </summary>
+        /// <returns></returns>
+        public static bool ExistAttention(int uuid_from, int uuid_to){
+            M.AttentionModel attention = new M.AttentionModel();
+            attention.Uuid_from = uuid_from;
+            attention.Uuid_to = uuid_to;
+            D.UserDAL dal = new D.UserDAL();
+            return dal.ExistAttention(attention);
+        }
+        /// <summary>
+        /// 添加关注
+        /// </summary>
+        /// <param name="uuid_from"></param>
+        /// <param name="uuid_to"></param>
+        /// <returns></returns>
+        public static bool AddAttention(int uuid_from,int uuid_to) {
+            M.AttentionModel attention = new M.AttentionModel();
+            attention.Uuid_from = uuid_from;
+            attention.Uuid_to = uuid_to;
+            D.UserDAL dal = new D.UserDAL();
+            return dal.AddAttention(attention);
+        }
+        /// <summary>
+        /// 删除关注
+        /// </summary>
+        /// <param name="uuid_from"></param>
+        /// <param name="uuid_to"></param>
+        /// <returns></returns>
+        public static bool DeleteAttention(int uuid_from, int uuid_to) {
+            M.AttentionModel attention = new M.AttentionModel();
+            attention.Uuid_from = uuid_from;
+            attention.Uuid_to = uuid_to;
+            D.UserDAL dal = new D.UserDAL();
+            return dal.DeleteAttention(attention);
+        }
+        /// <summary>
+        /// 获取用户的关注列表
+        /// </summary>
+        /// <param name="uuid_from"></param>
+        /// <returns></returns>
+        public static DataSet GetMyAttention(int uuid_from) {
+            M.AttentionModel attention = new M.AttentionModel();
+            attention.Uuid_from = uuid_from;
+            D.UserDAL dal = new D.UserDAL();
+            return dal.GetMyAttention(attention);
+        }
+        /// <summary>
+        /// 获取关注者的OneWord
+        /// </summary>
+        /// <param name="uuid_to"></param>
+        /// <returns></returns>
+        public static DataSet GetAttentionOW(int uuid_to) {
+            M.AttentionModel attention = new M.AttentionModel();
+            attention.Uuid_to = uuid_to;
+            D.UserDAL dal = new D.UserDAL();
+            return dal.GetAttentionOW(attention);
+        }
+        /// <summary>
+        /// 获取关注者基本信息
+        /// </summary>
+        /// <param name="uuid_to"></param>
+        /// <returns></returns>
+        public static DataSet GetAttentionInfo(int uuid_to) {
+            M.AttentionModel attention = new M.AttentionModel();
+            attention.Uuid_to = uuid_to;
+            D.UserDAL dal = new D.UserDAL();
+            return dal.GetAttentionInfo(attention);
+        }
+        /// <summary>
+        /// 获取今日推荐
+        /// </summary>
+        /// <param name="uuid_from"></param>
+        /// <returns></returns>
+        public static DataSet GetAttentionRandom(int uuid_from) {
+            M.AttentionModel attention = new M.AttentionModel();
+            attention.Uuid_from = uuid_from;
+            D.UserDAL dal = new D.UserDAL();
+            return dal.GetAttentionRandom(attention);
+        }
     }
 }

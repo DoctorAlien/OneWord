@@ -49,7 +49,7 @@ blockquote{background-color: #eeeeee;border-left: 5px solid #8c8c8c; }
 .oneword-feed{width: 970px;margin: 0 auto;}
 .oneword-feed-context,.oneword-feed-aside{margin-right: 10px;}
 .oneword-feed-context{width: 640px;position: absolute}
-.oneword-feed-aside{width:300px;float: right;position: relative;height: 225px;background: linear-gradient(#ffffff 50%,lightskyblue 50%);color: #444444}
+.oneword-feed-aside{width:300px;height: 225px;background: linear-gradient(#ffffff 50%,lightskyblue 50%);color: #444444}
 .oneword-feed-aside a{color:#444444}
 .oneword-aside-text,.oneword-aside-icon{width: 50%;display: block;float:left;text-align: center}
 .oneword-aside-text{font-size: 22px; margin-bottom: -8px;}
@@ -64,12 +64,23 @@ blockquote{background-color: #eeeeee;border-left: 5px solid #8c8c8c; }
 .random-info{float: left;margin-left: 10px;padding-top: 8px;height: 60px;}
 .random-oneword-body{margin-top:75px;}
 .random-oneword-foot{height: 18px;}
-.random-oneword-like{float: right;}
 
 .fa-size-1{font-size: 18px;}
 .fa-margin-1{margin-left: 10px;}
 
 .refresh-bottom{width: 640px;position: absolute;border-radius:0;margin-bottom:20px;}
+
+.navbar-logo{font-weight:bolder}
+.nav-lightskyblue>li>a:hover{background-color:transparent;color:White;background-color:#31b0d5}
+
+.oneword-recommend-aside{width:300px;margin-top:40px;border:solid 1px #ccc;box-shadow: 3px 3px 3px #ccc;padding-top:10px;}
+.aside-recommend-body{background-color:lightskyblue;height:65px;padding:8px 10px;margin-top:15px;}
+
+.cancel-attention-btn{padding:8px 16px;border:solid 1px lightskyblue;border-radius:5px;color:lightskyblue;}
+.cancel-attention-btn:hover{border:solid 1px orange;color:orange;font-weight:bolder}
+.attention-cancel-reload{color:#337ab7;border:solid 1px #337ab7;}
+.attention-ow{border:solid 1px #ccc;box-shadow:3px 3px 3px #ccc;margin-bottom:15px;}
+.attention-error{font-size:22px;padding:20px 25px;}
 /*Admin*/
 .user-content-header{position: relative;padding: 15px 10px 0px 20px;height: 65px;background: #fbfbfb;box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);}
 

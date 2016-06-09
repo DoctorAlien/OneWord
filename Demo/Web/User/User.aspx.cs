@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 
-public partial class User_User : System.Web.UI.Page
+public partial class User_UserTest : System.Web.UI.Page
 {
     DataSet dsAside = new DataSet();
     protected void Page_Load(object sender, EventArgs e)
@@ -15,9 +15,13 @@ public partial class User_User : System.Web.UI.Page
         {
             Response.Redirect("../Default.aspx");
         }
+        if (Session["uuid"] == null || Session["uuid"].ToString() == "")
+        {
+            Response.Redirect("../Default.aspx");
+        }
         repOneWord_Load();
         dsAside = BLL.UserBLL.GetInfoAside(int.Parse(Session["uuid"].ToString()));
-        if (dsAside.Tables.Count>0&&dsAside.Tables[0].Rows.Count>0)
+        if (dsAside.Tables.Count > 0 && dsAside.Tables[0].Rows.Count > 0)
         {
             repAside.DataSource = BLL.UserBLL.GetInfoAside(int.Parse(Session["uuid"].ToString())).Tables[0].DefaultView;
             repAside.DataBind();
@@ -27,11 +31,14 @@ public partial class User_User : System.Web.UI.Page
             lblUserName.Text = Session["username"].ToString();
             pnlAsideNull.Visible = true;
         }
-        repMusic.DataSource = BLL.UserBLL.GetMusicInfo().Tables[0].DefaultView;
-        repMusic.DataBind();
-        
+        repAttentionRandom_Page_Load();
     }
 
+    private void repAttentionRandom_Page_Load()
+    {
+        repAttentionRandom.DataSource = BLL.UserBLL.GetAttentionRandom(int.Parse(Session["uuid"].ToString())).Tables[0].DefaultView;
+        repAttentionRandom.DataBind();
+    }
     private void repOneWord_Load()
     {
         repOneWord.DataSource = BLL.UserBLL.GetWordSet().Tables[0].DefaultView;
@@ -45,7 +52,8 @@ public partial class User_User : System.Web.UI.Page
         {
             Response.Redirect("User.aspx");
         }
-        else {
+        else
+        {
             Response.Redirect("User.aspx");
         }
     }
@@ -56,5 +64,9 @@ public partial class User_User : System.Web.UI.Page
     protected void lbtnRefresh_bottom_Click(object sender, EventArgs e)
     {
         repOneWord_Load();
+    }
+    protected void lbtnAttentionRandomChange_Click(object sender, EventArgs e)
+    {
+        repAttentionRandom_Page_Load();
     }
 }

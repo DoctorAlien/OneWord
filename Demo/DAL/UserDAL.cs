@@ -179,5 +179,132 @@ namespace DAL
             //};
             return sql.GetDataSet(sqlString);
         }
+        /// <summary>
+        /// 是否已经关注过
+        /// </summary>
+        /// <param name="attention"></param>
+        /// <returns></returns>
+        public bool ExistAttention(M.AttentionModel attention) {
+            try
+            {
+                string sqlString = "select * from t_users_attention where uuid_from=@uuid_from and uuid_to=@uuid_to ";
+                SqlParameter[] values = new SqlParameter[]{
+                new SqlParameter("@uuid_from",attention.Uuid_from),
+                new SqlParameter("@uuid_to",attention.Uuid_to)
+                };
+                return sql.IsExist(sqlString,values);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        /// <summary>
+        /// 添加关注
+        /// </summary>
+        /// <param name="attention"></param>
+        /// <returns></returns>
+        public bool AddAttention(M.AttentionModel attention) {
+            try
+            {
+                string sqlString = "insert into t_users_attention(uuid_from,uuid_to) values(@uuid_from,@uuid_to)";
+                SqlParameter[] values = new SqlParameter[]{
+                new SqlParameter("@uuid_from",attention.Uuid_from),
+                new SqlParameter("@uuid_to",attention.Uuid_to)
+                };
+                int i = sql.UpdateDataRows(sqlString,values);
+                if (i == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        /// <summary>
+        /// 删除关注
+        /// </summary>
+        /// <param name="attention"></param>
+        /// <returns></returns>
+        public bool DeleteAttention(M.AttentionModel attention) {
+            try
+            {
+                string sqlString = "delete from t_users_attention where uuid_from=@uuid_from and uuid_to=@uuid_to";
+                SqlParameter[] values = new SqlParameter[]{
+                new SqlParameter("@uuid_from",attention.Uuid_from),
+                new SqlParameter("@uuid_to",attention.Uuid_to)
+                };
+                int i = sql.UpdateDataRows(sqlString,values);
+                if (i==1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        /// <summary>
+        /// 获取用户的关注列表
+        /// </summary>
+        /// <param name="attention"></param>
+        /// <returns></returns>
+        public DataSet GetMyAttention(M.AttentionModel attention) {
+            string sqlString = "select * from t_users_attention as ua,t_users_base as ub where ua.uuid_to=ub.uuid and ua.uuid_from=@uuid_from";
+            SqlParameter[] values = new SqlParameter[]{
+            new SqlParameter("@uuid_from",attention.Uuid_from)
+            };
+            return sql.GetDataSet(sqlString,values);
+        }
+        /// <summary>
+        /// 获取关注者的OneWord
+        /// </summary>
+        /// <param name="attention"></param>
+        /// <returns></returns>
+        public DataSet GetAttentionOW(M.AttentionModel attention) {
+            string sqlString = "select * from t_words_base as wb where wb.uuid=@uuid_to";
+            SqlParameter[] values = new SqlParameter[]{
+            new SqlParameter("@uuid_to",attention.Uuid_to)
+            };
+            return sql.GetDataSet(sqlString, values);
+        }
+        /// <summary>
+        /// 获取关注者基本信息
+        /// </summary>
+        /// <param name="attention"></param>
+        /// <returns></returns>
+        public DataSet GetAttentionInfo(M.AttentionModel attention) {
+            string sqlString = "select * from t_users_base where uuid=@uuid_to";
+            SqlParameter[] values = new SqlParameter[]{
+            new SqlParameter("@uuid_to",attention.Uuid_to)
+            };
+            return sql.GetDataSet(sqlString, values);
+        }
+        /// <summary>
+        /// 获取今日推荐
+        /// </summary>
+        /// <param name="attention"></param>
+        /// <returns></returns>
+        public DataSet GetAttentionRandom(M.AttentionModel attention) {
+            string sqlString = "select top 3 * from t_users_base as ub where ub.uuid not in(select ua.uuid_to from t_users_attention as ua where ua.uuid_from=@uuid_from) order by NEWID()";
+            SqlParameter[] values = new SqlParameter[]{
+            new SqlParameter("@uuid_from",attention.Uuid_from)
+            };
+            return sql.GetDataSet(sqlString, values);
+        }
     }
 }
