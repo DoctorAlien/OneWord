@@ -17,10 +17,10 @@ public partial class Admin_Chart : System.Web.UI.Page
 
             ChartUsers_Page_Load();
             ChartOneWord_Page_Load();
+
+            ChartAttention_Page_Load();
         }
     }
-
-    
     protected void ddlYears_SelectedIndexChanged(object sender, EventArgs e)
     {
         ChartUsers_Page_Load();
@@ -35,6 +35,7 @@ public partial class Admin_Chart : System.Web.UI.Page
         chartUsers.Series[0].YValueMembers = "sum_people";
         chartUsers.ChartAreas["chartUsersArea"].AxisY.Title = "人数(人)";
         chartUsers.ChartAreas["chartUsersArea"].AxisX.Title = "月份(月)";
+        chartUsers.Series[0].IsValueShownAsLabel = true;
         chartUsers.DataBind();
     }
     #endregion
@@ -47,8 +48,19 @@ public partial class Admin_Chart : System.Web.UI.Page
         chartOneWord.Series[0].YValueMembers = "sum_word";
         chartOneWord.ChartAreas["chartOneWordArea"].AxisY.Title = "条数(条)";
         chartOneWord.ChartAreas["chartOneWordArea"].AxisX.Title = "月份(月)";
+        chartOneWord.Series[0].IsValueShownAsLabel = true;
         chartOneWord.DataBind();
     }
     #endregion
-
+    #region 关注热度
+    private void ChartAttention_Page_Load()
+    {
+        chartAttention.DataSource = BLL.AdminBLL.GetChartAttention().Tables[0].DefaultView;
+        chartAttention.Series[0].XValueMember = "username_";
+        chartAttention.Series[0].YValueMembers = "count_uuid_to";
+        chartAttention.ChartAreas["chartAttentionArea"].AxisY.Title = "人数(人)";
+        chartAttention.Series[0].IsValueShownAsLabel = true;
+        chartAttention.DataBind();
+    }
+    #endregion
 }

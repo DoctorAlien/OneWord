@@ -230,5 +230,13 @@ namespace BLL
             D.AdminDAL dal = new D.AdminDAL();
             return dal.GetChartWords(month);
         }
+        /// <summary>
+        /// 获取关注热度
+        /// </summary>
+        /// <returns></returns>
+        public static DataSet GetChartAttention() {
+            D.AdminDAL dal = new D.AdminDAL();
+            return dal.GetChartAttention();
+        }
     }
 }

@@ -72,6 +72,28 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-6">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">关注热度</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <div class="text-center">
+                    <asp:Chart ID="chartAttention" runat=server><Series><asp:Series Name="Series1"></asp:Series></Series>
+                    <ChartAreas><asp:ChartArea Name="chartAttentionArea"></asp:ChartArea></ChartAreas></asp:Chart>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
        </div>
     </section>
 </div>

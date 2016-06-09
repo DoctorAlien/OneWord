@@ -373,5 +373,13 @@ namespace DAL
             string sqlString = "select count(*) as sum_word,DATENAME(YEAR,create_time) as year_,DATENAME(MONTH,create_time) as month_ from t_words_base where DATENAME(YEAR,create_time)='" + month + "' group by DATENAME(YEAR,create_time),DATENAME(MONTH,create_time)";
             return sql.GetDataSet(sqlString);
         }
+        /// <summary>
+        /// 获取关注热度
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetChartAttention() {
+            string sqlString = "select top 3 ub.username_,count(ua.uuid_to) as count_uuid_to from t_users_attention as ua,t_users_base as ub where ua.uuid_to=ub.uuid group by ua.uuid_to,ub.username_ order by count_uuid_to desc;";
+            return sql.GetDataSet(sqlString);
+        }
     }
 }
