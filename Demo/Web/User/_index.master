@@ -1,7 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="_index.master.cs" Inherits="User_index" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -15,36 +14,38 @@
     <script type="text/javascript" src="../Js/OwO.min.js"></script>
     <script type="text/javascript" src="../Js/remaining-num.js"></script>
     <script type="text/javascript" src="../Js/APlayer.min.js"></script>
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <div class="navbar navbar-lightskyblue navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header pull-left">
-            <a href="User.aspx" class="navbar-brand navbar-logo">一言</a>
-        </div>
-        <ul class="nav navbar-nav nav-lightskyblue">
-            <li><a href="MyAttention.aspx">特别关注</a></li>
-            <li><a href="UserCenter.aspx">个人中心</a></li>
-        </ul>
-        <div class="navbar-brand pull-right">
-            <a href="../LogOut.aspx">退出</a>
+    <div class="navbar navbar-lightskyblue navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header pull-left">
+                <a href="User.aspx" class="navbar-brand navbar-logo">一言</a>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-navbar"
+                    aria-expanded="false">
+                    <span class="fa fa-navicon">
+                </button>
+            <div class="collapse navbar-collapse"  id="user-navbar">
+                <ul class="nav navbar-nav nav-lightskyblue">
+                    <li><a href="MyAttention.aspx">特别关注</a></li>
+                    <li><a href="UserCenter.aspx">个人中心</a></li>
+                </ul>
+                <div class="navbar-brand pull-right">
+                    <a href="../LogOut.aspx">退出</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <div id="side-music" class="fixed-music aplayer">
     </div>
-
-
-    <div id="side-music" class="fixed-music aplayer"></div>
-<div id="side-top" class="fixed-top" style="display:none;">
-    <img src="../Image/top_icon.png" width="50px" height="50px"/>
-</div>
+    <div id="side-top" class="fixed-top" style="display: none;">
+        <img src="../Image/top_icon.png" width="50px" height="50px" />
+    </div>
     </form>
     <script type="text/javascript">
         $("#side-top").click(function () {
@@ -62,25 +63,25 @@
         };
     </script>
     <asp:Repeater ID="repMusic" runat="server">
-    <ItemTemplate>
-        <script type="text/javascript">
-            var music = new APlayer({
-                element: document.getElementById('side-music'),
-                narrow: true,
-                autoplay: false,
-                showlrc: false,
-                mutex: true,
-                theme: '#e6d0b2',
-                music: {
-                    title: '<%#Eval("title_") %>',
-                    author: '<%#Eval("author_") %>',
-                    url: '<%#Eval("url_") %>',
-                    pic: '<%#Eval("picture_") %>'
-                }
-            });
-            music.init();
-        </script>
-    </ItemTemplate>
+        <ItemTemplate>
+            <script type="text/javascript">
+                var music = new APlayer({
+                    element: document.getElementById('side-music'),
+                    narrow: true,
+                    autoplay: false,
+                    showlrc: false,
+                    mutex: true,
+                    theme: '#e6d0b2',
+                    music: {
+                        title: '<%#Eval("title_") %>',
+                        author: '<%#Eval("author_") %>',
+                        url: '<%#Eval("url_") %>',
+                        pic: '<%#Eval("picture_") %>'
+                    }
+                });
+                music.init();
+            </script>
+        </ItemTemplate>
     </asp:Repeater>
 </body>
 </html>
