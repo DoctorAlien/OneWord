@@ -6,7 +6,7 @@
     <div class="container" style="margin-top:70px;">
         <asp:Repeater ID="repMyAttention" runat="server">
         <ItemTemplate>
-            <div class="col-xs-4" style="margin-bottom:20px;">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-bottom:20px;">
             <div style="height:75px;background-color:#ccc;padding:8px 15px;box-shadow:3px 3px 3px #ccc">
                 <div class="pull-left">
                     <img src="../Image/guest.png" class="img-circle" style="width: 60px;height: 60px;">

@@ -19,8 +19,23 @@ public partial class Admin_Chart : System.Web.UI.Page
             ChartOneWord_Page_Load();
 
             ChartAttention_Page_Load();
+
+            ChartWordsLike_Page_Load();
         }
     }
+    #region 点赞热度统计
+    private void ChartWordsLike_Page_Load()
+    {
+        chartWordsLike.DataSource = BLL.AdminBLL.GetChartWordsLike().Tables[0].DefaultView;
+        chartWordsLike.Series[0].XValueMember = "wbid";
+        chartWordsLike.Series[0].YValueMembers = "number_";
+        chartWordsLike.ChartAreas["chartWordsLikeArea"].AxisY.Title = "人数(人)";
+        chartWordsLike.ChartAreas["chartWordsLikeArea"].AxisX.Title = "编号";
+        chartWordsLike.Series[0].IsValueShownAsLabel = true;
+        chartWordsLike.DataBind();
+    }
+    #endregion
+    
     protected void ddlYears_SelectedIndexChanged(object sender, EventArgs e)
     {
         ChartUsers_Page_Load();

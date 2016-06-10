@@ -238,5 +238,13 @@ namespace BLL
             D.AdminDAL dal = new D.AdminDAL();
             return dal.GetChartAttention();
         }
+        /// <summary>
+        /// 获取点赞排行
+        /// </summary>
+        /// <returns></returns>
+        public static DataSet GetChartWordsLike(){
+            D.AdminDAL dal = new D.AdminDAL();
+            return dal.GetChartWordsLike();
+        }
     }
 }

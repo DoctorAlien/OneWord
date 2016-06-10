@@ -381,5 +381,13 @@ namespace DAL
             string sqlString = "select top 3 ub.username_,count(ua.uuid_to) as count_uuid_to from t_users_attention as ua,t_users_base as ub where ua.uuid_to=ub.uuid group by ua.uuid_to,ub.username_ order by count_uuid_to desc;";
             return sql.GetDataSet(sqlString);
         }
+        /// <summary>
+        /// 获取点赞排行
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetChartWordsLike() {
+            string sqlString = "select top 3 * from t_words_status order by number_ desc";
+            return sql.GetDataSet(sqlString);
+        }
     }
 }
