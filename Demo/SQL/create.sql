@@ -57,4 +57,3 @@ insert into t_users_base(username_,password_,mobile_,create_ip)values
 ('admin','96E79218965EB72C92A549DD5A330112','13511111111','192.168.1.1');
 insert into t_users_admin values(1,1);
 insert into t_words_base(uuid,word_)values
-insert into t_musics_base(title_,author_,url_,picture_)values('Preparation','Hans Zimmer/Richard Harvey','http://devtest.qiniudn.com/Preparation.mp3','http://devtest.qiniudn.com/Preparation.jpg')
