@@ -54,7 +54,9 @@ create table t_users_attention
 	constraint FK_Attention_uuid_from foreign key(uuid_from) references t_users_base(uuid) on delete cascade
 );
 insert into t_users_base(username_,password_,mobile_,create_ip)values
-('admin','96E79218965EB72C92A549DD5A330112','13511111111','192.168.1.1');
+('admin','96E79218965EB72C92A549DD5A330112','13511111111','192.168.1.1'),
+('test2','96E79218965EB72C92A549DD5A330112','13511111112','192.168.1.1'),
+('test3','96E79218965EB72C92A549DD5A330112','13511111113','192.168.1.1');
 insert into t_users_admin values(1,1);
 insert into t_words_base(uuid,word_)values
 (2,'天下事没有完美的'),
