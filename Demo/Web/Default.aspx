@@ -13,6 +13,7 @@
     <script src="Js/bootstrap.min.js"></script>
     <script src="Js/clouds.js"></script>
     <script src="Js/app.js"></script>
+    <script src="Js/isIE6.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">

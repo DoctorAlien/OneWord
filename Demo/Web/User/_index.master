@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../Js/OwO.min.js"></script>
     <script type="text/javascript" src="../Js/remaining-num.js"></script>
     <script type="text/javascript" src="../Js/APlayer.min.js"></script>
+    <script src="../Js/isIE6.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
